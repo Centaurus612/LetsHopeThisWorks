@@ -24,10 +24,10 @@ namespace TIEconomyMod
             //Get a diminishing-return % bonus to growth based on total number of these regions
             int totalRegions = __instance.currentResourceRegions + __instance.currentCoreEconomicRegions;
             float regionsMult = 1f;
-            if (totalRegions >= 1) regionsMult += 0.2f; //20% bonus for first region
-            if (totalRegions >= 2) regionsMult += 0.1f; //10% bonus for second region
-            if (totalRegions >= 3) regionsMult += 0.05f; //5% bonus for third region
-            if (totalRegions >= 4) regionsMult += 0.025f * (totalRegions - 3); //2.5% bonus for fourth region and beyond
+            if (totalRegions >= 1) regionsMult += 1.0f; //100% bonus for first region
+            if (totalRegions >= 2) regionsMult += 1.0f; //100% bonus for second region
+            if (totalRegions >= 3) regionsMult += 1.0f; //100% bonus for third region
+            if (totalRegions >= 4) regionsMult += 1.0f * (totalRegions - 3); //100% bonus for fourth region and beyond
 
             //Demographic stat bonuses
             float educationMult = 1f + (0.15f * __instance.education); //get 15% bonus growth per education point
@@ -41,7 +41,7 @@ namespace TIEconomyMod
             float perCapGDPMult = 6f * Mathf.Pow(0.96f, __instance.perCapitaGDP / 1000f);
 
 
-            float modifiedGDPChange = baseGDPChange * regionsMult * educationMult * democracyMult * cohesionMult * perCapGDPMult; //Final amount of gdp to gain
+            float modifiedGDPChange = baseGDPChange * regionsMult * educationMult * democracyMult * cohesionMult; //Final amount of gdp to gain, ignoring perCapitaGDP
 
             float finalPerCapGDPChange = modifiedGDPChange / __instance.population; //Amount to change GDP per capita by
 
