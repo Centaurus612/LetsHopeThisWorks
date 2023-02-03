@@ -15,7 +15,7 @@ This is a fan mod for the game Terra Invicta. It modifies the way national econo
 
 -Economy investments gives an amount of GDP, as opposed to an amount of GDP per capita (though the tooltip shows the distributed GDP per capita). This makes all economies grow at the same % rate, disregarding modifiers.
 
--Investment effects that impact demographic stats such as education, inequality, or cohesion are scaled inversely based on population size. You need 1000 times as many knowledge investments to increase education by 0.1 in a country with 1 billion people compared to a country with 1 million population.
+-Investment effects that impact demographic stats such as education, inequality, or cohesion are scaled inversely based a 250 million constant.
 
 -Education increases at a faster rate at lower education levels, and a slower rate at higher levels. This is an exponential decay function that gives 4 times the gain rate at 0 education compared to 10 education, and 50% of the gain at 15 education compared to 10.
 
